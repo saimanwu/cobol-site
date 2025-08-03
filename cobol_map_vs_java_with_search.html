@@ -1,70 +1,201 @@
-
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <title>COBOL 中文入門地圖 + Java 對照</title>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 2rem; line-height: 1.6; background: #f7f9fc; }
-    h1 { color: #333366; }
-    h2 { color: #444; margin-top: 2rem; }
-    .search-box { margin-bottom: 1rem; }
-    .search-box input { width: 100%; padding: 0.5rem; font-size: 1rem; border: 1px solid #ccc; }
-    .section { margin-top: 1.5rem; background: #fff; padding: 1rem; border-radius: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.05); }
-    .highlight { background-color: yellow; }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>COBOL 中文入門地圖 & 語法對照表（含搜尋）</title>
+<style>
+  body {
+    font-family: "微軟正黑體", Arial, sans-serif;
+    background: #f9f9f9;
+    color: #333;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+  }
+  h1, h2 {
+    color: #007acc;
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 2px solid #007acc;
+    border-radius: 5px;
+  }
+  details {
+    margin-bottom: 10px;
+    border: 1px solid #007acc;
+    border-radius: 5px;
+    background: #e6f2ff;
+    padding: 10px 15px;
+  }
+  summary {
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: pointer;
+  }
+  ul {
+    margin: 8px 0 0 20px;
+  }
+  ul li {
+    margin-bottom: 6px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+  }
+  th, td {
+    border: 1px solid #007acc;
+    padding: 8px 12px;
+    text-align: left;
+  }
+  th {
+    background-color: #007acc;
+    color: white;
+  }
+  mark {
+    background: yellow;
+    padding: 0 2px;
+  }
+  .hidden {
+    display: none;
+  }
+</style>
 </head>
 <body>
-  <h1>COBOL 中文入門地圖 + Java 對照</h1>
 
-  <div class="search-box">
-    <input type="text" id="searchInput" placeholder="🔍 搜尋 COBOL 或 Java 關鍵詞...">
-  </div>
+<h1>COBOL 中文入門地圖</h1>
+<input type="text" id="searchInput" placeholder="?? 輸入關鍵字搜尋…（例如 PERFORM 或 PIC）" />
 
-  <div id="content">
-    <div class="section">
-      <h2>🌱 COBOL 中文入門地圖</h2>
-      <ul>
-        <li>語言定位與應用場景（Mainframe, 金融系統）</li>
-        <li>基本結構：識別區、環境區、程序區</li>
-        <li>資料宣告：Data Division, Level 01~05</li>
-        <li>常用語法：MOVE、IF、PERFORM、ACCEPT、DISPLAY</li>
-        <li>檔案處理：SEQUENTIAL、INDEXED 檔案</li>
-        <li>Batch Job 基礎：JCL 與執行流程</li>
-        <li>商業邏輯實作與報表生成</li>
-      </ul>
-    </div>
+<!-- 入門地圖 -->
+<div id="mapContainer">
+<details open>
+  <summary>1. COBOL 基本架構</summary>
+  <ul>
+    <li>Identification Division（程式名稱 PROGRAM-ID）</li>
+    <li>Environment Division（運行環境設定）</li>
+    <li>Data Division（變數宣告與檔案結構）</li>
+    <li>Procedure Division（程式邏輯與流程控制）</li>
+  </ul>
+</details>
+<details>
+  <summary>2. COBOL 基本語法</summary>
+  <ul>
+    <li>區域與欄位（A區、B區、第7欄註解）</li>
+    <li>語句結束符號（句點）</li>
+    <li>關鍵字（MOVE、ADD、PERFORM、IF、DISPLAY）</li>
+    <li>註解方式（第7欄 * 符號）</li>
+  </ul>
+</details>
+<details>
+  <summary>3. 變數與資料型態</summary>
+  <ul>
+    <li>PIC 語法介紹（數字 9，字元 X）</li>
+    <li>常用數據類型（整數、字串、日期）</li>
+    <li>變數初始化與賦值（VALUE）</li>
+  </ul>
+</details>
+<details>
+  <summary>4. 流程控制</summary>
+  <ul>
+    <li>條件判斷（IF、EVALUATE）</li>
+    <li>迴圈（PERFORM、PERFORM VARYING）</li>
+    <li>子程序調用（PERFORM）</li>
+  </ul>
+</details>
+<details>
+  <summary>5. 常用指令範例</summary>
+  <ul>
+    <li>輸入輸出（ACCEPT、DISPLAY）</li>
+    <li>數學運算（ADD、SUBTRACT、MULTIPLY、DIVIDE）</li>
+    <li>字串處理（STRING、UNSTRING）</li>
+  </ul>
+</details>
+<details>
+  <summary>6. 主機系統基礎</summary>
+  <ul>
+    <li>編譯與執行流程</li>
+    <li>JCL 作業卡基礎介紹</li>
+    <li>主機資料檔案操作（VSAM）</li>
+  </ul>
+</details>
+<details>
+  <summary>7. 進階主題（選修）</summary>
+  <ul>
+    <li>檔案處理（SEQUENTIAL、INDEXED）</li>
+    <li>資料結構（表格、陣列）</li>
+    <li>錯誤處理與除錯技巧</li>
+  </ul>
+</details>
+</div>
 
-    <div class="section">
-      <h2>🔁 COBOL vs Java 語法對照簡表</h2>
-      <table border="1" cellpadding="5">
-        <thead><tr><th>COBOL</th><th>Java</th></tr></thead>
-        <tbody>
-          <tr><td>MOVE A TO B</td><td>B = A;</td></tr>
-          <tr><td>IF A = B</td><td>if (A == B)</td></tr>
-          <tr><td>PERFORM PARA1</td><td>para1();</td></tr>
-          <tr><td>DISPLAY "HELLO"</td><td>System.out.println("HELLO");</td></tr>
-          <tr><td>ACCEPT A</td><td>Scanner sc = new Scanner(System.in); A = sc.nextLine();</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+<hr />
 
-  <script>
-    const input = document.getElementById("searchInput");
-    input.addEventListener("input", () => {
-      const keyword = input.value.toLowerCase();
-      const content = document.getElementById("content");
-      const elements = content.querySelectorAll("li, td, th");
-      elements.forEach(el => {
-        const text = el.textContent.toLowerCase();
-        if (keyword && text.includes(keyword)) {
-          el.classList.add("highlight");
-        } else {
-          el.classList.remove("highlight");
-        }
+<h2>COBOL vs Java 語法對照簡表</h2>
+<table id="syntaxTable">
+  <thead>
+    <tr>
+      <th>語言元素</th>
+      <th>Java 範例</th>
+      <th>COBOL 範例</th>
+      <th>備註</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>主程式宣告</td><td>public class Main</td><td>IDENTIFICATION DIVISION.</td><td>Java 是物件導向</td></tr>
+    <tr><td>主程式入口</td><td>main()</td><td>PROGRAM-ID. MAIN.</td><td>COBOL 沒有函式式寫法</td></tr>
+    <tr><td>程式邏輯</td><td>{ }</td><td>PROCEDURE DIVISION.</td><td>區塊分明</td></tr>
+    <tr><td>變數宣告</td><td>int x = 10;</td><td>01 X PIC 9(2) VALUE 10.</td><td>PIC 型態定義</td></tr>
+    <tr><td>字串</td><td>String msg = "Hi";</td><td>01 MSG PIC X(20).</td><td>X 表示字元</td></tr>
+    <tr><td>條件判斷</td><td>if (x > 5)</td><td>IF X > 5 THEN</td><td>END-IF 結尾</td></tr>
+    <tr><td>迴圈</td><td>for (...) {...}</td><td>PERFORM VARYING I FROM ...</td><td>無 while</td></tr>
+    <tr><td>輸出</td><td>System.out.println()</td><td>DISPLAY</td><td>DISPLAY 輸出</td></tr>
+    <tr><td>加法</td><td>c = a + b;</td><td>ADD A TO B GIVING C.</td><td>語句動詞式</td></tr>
+  </tbody>
+</table>
+
+<script>
+  const input = document.getElementById("searchInput");
+  const detailsList = document.querySelectorAll("details");
+  const rows = document.querySelectorAll("#syntaxTable tbody tr");
+
+  input.addEventListener("input", function () {
+    const keyword = this.value.toLowerCase().trim();
+    const markText = (text) =>
+      text.replace(
+        new RegExp(`(${keyword})`, "gi"),
+        '<mark>$1</mark>'
+      );
+
+    // 過濾 details 區塊
+    detailsList.forEach((d) => {
+      const text = d.innerText.toLowerCase();
+      const matched = text.includes(keyword);
+      d.style.display = matched || keyword === "" ? "block" : "none";
+
+      // 高亮關鍵字
+      d.querySelectorAll("li").forEach((li) => {
+        li.innerHTML = keyword ? markText(li.textContent) : li.textContent;
       });
     });
-  </script>
+
+    // 過濾表格列
+    rows.forEach((row) => {
+      const text = row.innerText.toLowerCase();
+      const matched = text.includes(keyword);
+      row.style.display = matched || keyword === "" ? "" : "none";
+
+      // 高亮每格
+      row.querySelectorAll("td").forEach((td) => {
+        td.innerHTML = keyword ? markText(td.textContent) : td.textContent;
+      });
+    });
+  });
+</script>
+
 </body>
 </html>

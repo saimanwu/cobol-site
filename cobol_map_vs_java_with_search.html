@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>COBOL 中文入門地圖 + Java 對照</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 2rem; line-height: 1.6; background: #f7f9fc; }
+    h1 { color: #333366; }
+    h2 { color: #444; margin-top: 2rem; }
+    .search-box { margin-bottom: 1rem; }
+    .search-box input { width: 100%; padding: 0.5rem; font-size: 1rem; border: 1px solid #ccc; }
+    .section { margin-top: 1.5rem; background: #fff; padding: 1rem; border-radius: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.05); }
+    .highlight { background-color: yellow; }
+  </style>
+</head>
+<body>
+  <h1>COBOL 中文入門地圖 + Java 對照</h1>
+
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="🔍 搜尋 COBOL 或 Java 關鍵詞...">
+  </div>
+
+  <div id="content">
+    <div class="section">
+      <h2>🌱 COBOL 中文入門地圖</h2>
+      <ul>
+        <li>語言定位與應用場景（Mainframe, 金融系統）</li>
+        <li>基本結構：識別區、環境區、程序區</li>
+        <li>資料宣告：Data Division, Level 01~05</li>
+        <li>常用語法：MOVE、IF、PERFORM、ACCEPT、DISPLAY</li>
+        <li>檔案處理：SEQUENTIAL、INDEXED 檔案</li>
+        <li>Batch Job 基礎：JCL 與執行流程</li>
+        <li>商業邏輯實作與報表生成</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>🔁 COBOL vs Java 語法對照簡表</h2>
+      <table border="1" cellpadding="5">
+        <thead><tr><th>COBOL</th><th>Java</th></tr></thead>
+        <tbody>
+          <tr><td>MOVE A TO B</td><td>B = A;</td></tr>
+          <tr><td>IF A = B</td><td>if (A == B)</td></tr>
+          <tr><td>PERFORM PARA1</td><td>para1();</td></tr>
+          <tr><td>DISPLAY "HELLO"</td><td>System.out.println("HELLO");</td></tr>
+          <tr><td>ACCEPT A</td><td>Scanner sc = new Scanner(System.in); A = sc.nextLine();</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    const input = document.getElementById("searchInput");
+    input.addEventListener("input", () => {
+      const keyword = input.value.toLowerCase();
+      const content = document.getElementById("content");
+      const elements = content.querySelectorAll("li, td, th");
+      elements.forEach(el => {
+        const text = el.textContent.toLowerCase();
+        if (keyword && text.includes(keyword)) {
+          el.classList.add("highlight");
+        } else {
+          el.classList.remove("highlight");
+        }
+      });
+    });
+  </script>
+</body>
+</html>

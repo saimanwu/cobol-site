@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>COBOL 中文入門地圖</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #fff;
+      color: #000;
+      margin: 2em auto;
+      padding: 0 1em;
+      max-width: 900px;
+    }
+    h1, h2 {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.3em;
+    }
+    h1 {
+      font-size: 1.8em;
+    }
+    h2 {
+      font-size: 1.4em;
+      margin-top: 2em;
+    }
+    ul {
+      margin-top: 0.5em;
+      padding-left: 1.5em;
+    }
+    li {
+      margin-bottom: 0.4em;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1em;
+    }
+    th, td {
+      border: 1px solid #999;
+      padding: 0.5em;
+      text-align: left;
+    }
+    th {
+      background-color: #eee;
+    }
+    footer {
+      margin-top: 3em;
+      font-size: 0.9em;
+      text-align: center;
+      color: #555;
+    }
+    a {
+      color: #000;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<h1>COBOL 中文入門地圖</h1>
+
+<p>依照主題分段，逐步建立 COBOL 的理解與實作能力：</p>
+
+<h2>一、初階導引</h2>
+<ul>
+  <li>什麼是 COBOL？</li>
+  <li>COBOL 在金融、主機、商業系統的角色</li>
+  <li>主機（Mainframe）與一般 PC 的開發差異</li>
+</ul>
+
+<h2>二、基礎語法</h2>
+<ul>
+  <li>四大 Division 的結構與順序</li>
+  <li>資料型態與 PIC 使用方式</li>
+  <li>基本輸入輸出（DISPLAY / ACCEPT）</li>
+  <li>流程控制（IF、PERFORM）</li>
+</ul>
+
+<h2>三、邏輯與實作</h2>
+<ul>
+  <li>變數運算與資料處理（加減乘除）</li>
+  <li>條件判斷與分支邏輯</li>
+  <li>小型範例：薪資計算、年齡判斷、帳戶管理</li>
+</ul>
+
+<h2>四、進階主題</h2>
+<ul>
+  <li>JCL 入門</li>
+  <li>VSAM 與檔案處理基礎</li>
+  <li>主機開發與維運流程概覽</li>
+</ul>
+
+<h2>五、COBOL vs Java 語法對照表</h2>
+<table>
+  <thead>
+    <tr>
+      <th>概念</th>
+      <th>COBOL</th>
+      <th>Java</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>程式名稱</td>
+      <td>PROGRAM-ID. HelloWorld.</td>
+      <td>public class HelloWorld {</td>
+    </tr>
+    <tr>
+      <td>變數宣告</td>
+      <td>01 NUM1 PIC 9(2) VALUE 10.</td>
+      <td>int num1 = 10;</td>
+    </tr>
+    <tr>
+      <td>輸出</td>
+      <td>DISPLAY 'Hello'.</td>
+      <td>System.out.println("Hello");</td>
+    </tr>
+    <tr>
+      <td>輸入</td>
+      <td>ACCEPT AGE.</td>
+      <td>Scanner sc = new Scanner(System.in);</td>
+    </tr>
+    <tr>
+      <td>條件判斷</td>
+      <td>IF AGE &gt;= 18 THEN ...</td>
+      <td>if (age &gt;= 18) { ... }</td>
+    </tr>
+    <tr>
+      <td>加法</td>
+      <td>ADD A TO B GIVING C.</td>
+      <td>int c = a + b;</td>
+    </tr>
+    <tr>
+      <td>註解</td>
+      <td>* 這是註解</td>
+      <td>// 這是註解</td>
+    </tr>
+    <tr>
+      <td>程式結束</td>
+      <td>STOP RUN.</td>
+      <td>return;</td>
+    </tr>
+  </tbody>
+</table>
+
+<footer>
+  <p><a href="index.html">← 返回首頁</a></p>
+  <p>版權所有 © 2024 COBOL 教學</p>
+</footer>
+
+</body>
+</html>
